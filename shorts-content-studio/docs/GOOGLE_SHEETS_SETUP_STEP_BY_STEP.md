@@ -129,12 +129,12 @@ GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END
 ### 5-4. .env.local 파일 예시 (전체)
 ```env
 # OpenAI API Key
-OPENAI_API_KEY=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
+OPENAI_API_KEY=sk-proj-...your-api-key-here...
 
 # Google Sheets API
-GOOGLE_SHEET_ID=1nPNRi5L8HlI8T8mw0YZ5XLQoKiKKbXIDf6vEi-HPPh8
+GOOGLE_SHEET_ID=your-sheet-id-here
 GOOGLE_SERVICE_ACCOUNT_EMAIL=shorts-content-studio@your-project-id.iam.gserviceaccount.com
-GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC...\n-----END PRIVATE KEY-----\n"
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END PRIVATE KEY-----\n"
 
 # OpenAI Model (선택사항)
 OPENAI_MODEL=gpt-4o-mini
