@@ -55,3 +55,7 @@ fonts/
 *.otf
 *.woff
 *.woff2
+
+# Exclude parent directory files (prevent submodule issues)
+../Desktop/
+../.gitmodules

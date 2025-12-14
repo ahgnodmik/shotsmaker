@@ -8,6 +8,10 @@
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
 
+# 서브모듈 체크아웃 비활성화 (서브모듈 오류 방지)
+[build.processing]
+  skip_processing = false
+
 # Next.js는 별도 redirects 설정이 필요 없음 (자동 처리)
 # Next.js 16은 자동으로 API routes를 Netlify Functions로 변환
 
@@ -21,10 +25,6 @@
 
 # 환경 변수는 Netlify 대시보드에서 설정해야 함
 # Site settings > Environment variables
-
-# 자동 배포 설정
-[build.processing]
-  skip_processing = false
 
 [build.processing.css]
   bundle = true
@@ -46,4 +46,3 @@
 
 [[context.branch-deploy.environment]]
   NODE_ENV = "development"
-

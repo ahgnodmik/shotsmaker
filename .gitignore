@@ -1,0 +1,7 @@
+node_modules
+
+# Local Netlify folder
+.netlify
+
+# Exclude Desktop directory to prevent submodule issues
+Desktop/
