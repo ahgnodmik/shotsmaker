@@ -48,3 +48,10 @@ output/
 
 # Netlify
 .netlify/
+
+# Fonts (too large for git, use CDN instead)
+fonts/
+*.ttf
+*.otf
+*.woff
+*.woff2
