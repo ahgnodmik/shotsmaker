@@ -163,8 +163,9 @@ JSON 형식으로 응답:
     const parsed = JSON.parse(content) as GeneratedContent;
     
     // 해시태그가 문자열인 경우 배열로 변환
-    if (typeof parsed.hashtags === 'string') {
-      parsed.hashtags = parsed.hashtags.split(',').map((h) => h.trim());
+    const hashtagsValue = (parsed as any).hashtags;
+    if (typeof hashtagsValue === 'string') {
+      (parsed as any).hashtags = hashtagsValue.split(',').map((h: string) => h.trim());
     }
 
     return parsed;
@@ -293,17 +294,18 @@ JSON 형식으로 응답:
     const parsed = JSON.parse(content) as VerificationResult;
 
     // 배열 필드가 문자열인 경우 배열로 변환
-    if (typeof parsed.issues === 'string') {
-      parsed.issues = parsed.issues.split(',').map((i) => i.trim());
+    const parsedAny = parsed as any;
+    if (typeof parsedAny.issues === 'string') {
+      parsedAny.issues = parsedAny.issues.split(',').map((i: string) => i.trim());
     }
-    if (typeof parsed.warnings === 'string') {
-      parsed.warnings = parsed.warnings.split(',').map((w) => w.trim());
+    if (typeof parsedAny.warnings === 'string') {
+      parsedAny.warnings = parsedAny.warnings.split(',').map((w: string) => w.trim());
     }
-    if (typeof parsed.suggestions === 'string') {
-      parsed.suggestions = parsed.suggestions.split(',').map((s) => s.trim());
+    if (typeof parsedAny.suggestions === 'string') {
+      parsedAny.suggestions = parsedAny.suggestions.split(',').map((s: string) => s.trim());
     }
-    if (typeof parsed.verifiedFacts === 'string') {
-      parsed.verifiedFacts = parsed.verifiedFacts.split(',').map((f) => f.trim());
+    if (typeof parsedAny.verifiedFacts === 'string') {
+      parsedAny.verifiedFacts = parsedAny.verifiedFacts.split(',').map((f: string) => f.trim());
     }
 
     return parsed;
@@ -403,8 +405,9 @@ JSON 형식으로 응답:
     };
 
     // changes가 문자열인 경우 배열로 변환
-    if (typeof parsed.changes === 'string') {
-      parsed.changes = parsed.changes.split(',').map((c) => c.trim());
+    const parsedAny = parsed as any;
+    if (typeof parsedAny.changes === 'string') {
+      parsedAny.changes = parsedAny.changes.split(',').map((c: string) => c.trim());
     }
 
     return {

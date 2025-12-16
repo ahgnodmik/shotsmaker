@@ -11,10 +11,11 @@ import {
  */
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const contentId = parseInt(params.id, 10);
+    const { id } = await params;
+    const contentId = parseInt(id, 10);
 
     if (isNaN(contentId)) {
       return NextResponse.json(
@@ -85,10 +86,11 @@ export async function GET(
  */
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const contentId = parseInt(params.id, 10);
+    const { id } = await params;
+    const contentId = parseInt(id, 10);
 
     if (isNaN(contentId)) {
       return NextResponse.json(
@@ -208,10 +210,11 @@ export async function PUT(
  */
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const contentId = parseInt(params.id, 10);
+    const { id } = await params;
+    const contentId = parseInt(id, 10);
 
     if (isNaN(contentId)) {
       return NextResponse.json(
